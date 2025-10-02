@@ -1,15 +1,16 @@
-import './App.css'
+import './css/App.css'
+import Login from './Login.jsx'
 
 function App() {
 
   return (
     <>
-      <div>
-        <div className='left-semicircle'></div>
-        <div className='middle-circle'></div>
-        <div className='right'></div>
-        <h1>Hutto</h1>
-      </div>
+        <div className='main'>
+          <div className='left-semicircle'></div>
+          <div className='middle-circle'></div>
+          <div className='right'></div>
+          <Login />
+        </div>
     </>
   )
 }

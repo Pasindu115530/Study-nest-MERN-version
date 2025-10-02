@@ -1,0 +1,85 @@
+.login-container {
+            width: 45%;
+            height: 70%;
+            margin: auto 0 auto 0;
+            position: absolute;
+            border: 1px solid rgb(255 255 255 / 50%);
+            background: linear-gradient(to top right, rgba(195, 220, 220, 0.3) 20%, rgba(255, 255, 255, 0.15) 30%);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-content: center;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+.login-deco {
+
+        }
+
+.login-form-items {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 90px;
+            left: 245px;
+            
+            
+        }
+        
+        span.login-label {
+            color: #ff7200;
+            font-weight: 900;
+            font-size: 1.6em;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+        
+        .text-input-container {
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        
+        .form-label {
+            color: rgb(255, 255, 255);
+            font-weight: 300;
+            font-size: 0.8em;
+            margin-bottom: 5px;
+        }
+        
+        a.signup{
+            color: white;
+        }
+        input.text-style {
+            border-radius: 20px;
+            height: 20px;
+            background: none;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding-left: 10px;
+            color: white;
+        }
+button.login-btn {
+            width: 200px;
+            background: #ff7200;
+            border-radius: 20px;
+            border: none;
+            padding: 8px 0;
+            color: #000000;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            box-shadow: 0 8px 10px 0 rgba(0,0,0,0.25);
+            margin-top: 50px;
+        }
+button.login-btn:hover{
+            background-color: white;
+        }
