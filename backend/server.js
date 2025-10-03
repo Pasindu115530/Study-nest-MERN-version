@@ -20,13 +20,33 @@ app.use('/api/users', require('./routes/users'));
 app.use('/api/subjects', require('./routes/subjects'));
 app.use('/api/lecture-notes', require('./routes/lectureNotes'));
 
-// Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/studynest', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('MongoDB connected successfully'))
-.catch(err => console.error('MongoDB connection error:', err));
+// Database connection & server startup
+const { MONGODB_URI, JWT_SECRET } = process.env;
+
+if (!JWT_SECRET) {
+  console.error('FATAL: JWT_SECRET is not set. Define it in config.env');
+  process.exit(1);
+}
+
+const start = async () => {
+  try {
+    if (!MONGODB_URI) {
+      console.error('FATAL: MONGODB_URI is not set. Define it in config.env');
+      process.exit(1);
+    }
+
+    await mongoose.connect(MONGODB_URI);
+    console.log('MongoDB connected successfully');
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  } catch (err) {
+    console.error('Startup error:', err);
+    process.exit(1);
+  }
+};
+start();
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -40,7 +60,3 @@ app.use('*', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
