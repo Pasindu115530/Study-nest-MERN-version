@@ -1,7 +1,14 @@
+import { useState } from 'react';
+
 import './css/Login.css'
 import loginImg from './assets/loginImg.png'
 
 function Login(){
+
+    const [formData, setFormData] = useState({
+        email:'',
+        password:''
+    });
 
     return(
         <>
