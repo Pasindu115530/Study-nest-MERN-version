@@ -1,13 +1,25 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Chip, Link as MuiLink } from '@mui/material';
 
+// Eagerly import all images from assets and expose as URLs
+const localImages = import.meta.glob('../assets/*', { eager: true, as: 'url' });
+
+const resolveImage = (filename) => {
+  if (!filename) return null;
+  const lower = filename.toLowerCase();
+  const match = Object.entries(localImages).find(([path]) => path.toLowerCase().endsWith(`/${lower}`));
+  if (match) return match[1];
+  // fallback to a known placeholder if present
+  return localImages['../assets/bgRemoved.png'] || null;
+};
+
 const lecturers = [
   {
     name: 'Prof. Prasad M. Jayaweera',
     title: 'Dean / Professor of Information Systems Engineering and Informatics',
     email: 'pja@sjp.ac.lk',
     tel: '+94 11 275 8909',
-    img: '/study nest/Assets/img/DSC_2539_v03 (1).png',
+    img: 'DSC_2539_v03 (1).png',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -15,7 +27,7 @@ const lecturers = [
     title: 'Senior Lecturer',
     email: 'dhammikapieris@sjp.ac.lk',
     tel: '+94 11 275 8909',
-    img: '/study nest/Assets/img/image-7.png',
+    img: 'image-7.png',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -23,7 +35,7 @@ const lecturers = [
     title: 'Head – Department of Information Systems Engineering and Informatics / Senior Lecturer',
     email: 'gilmini@sjp.ac.lk',
     tel: '+94 71 9410222',
-    img: '/study nest/Assets/img/790.jpg',
+    img: '790.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -31,7 +43,7 @@ const lecturers = [
     title: 'Senior Lecturer',
     email: 'budditha@sjp.ac.lk',
     tel: '+94 76 6229829',
-    img: '/study nest/Assets/img/budditha-HB.jpg',
+    img: 'budditha-HB.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -39,7 +51,7 @@ const lecturers = [
     title: 'Head – Department of Scientific Computing / Senior Lecturer',
     email: 'nuwan@sjp.ac.lk',
     tel: '+94 71 6253592',
-    img: '/study nest/Assets/img/Dr.-Nuwan-291x300.jpg',
+    img: 'Dr.-Nuwan-291x300.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -47,7 +59,7 @@ const lecturers = [
     title: 'Head – Knowledge Engineering and Communication / Senior Lecturer',
     email: 'deepikas@sjp.ac.lk',
     tel: '+94 768093690',
-    img: '/study nest/Assets/img/Deepika2_edited.jpg',
+    img: 'Deepika2_edited.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -55,7 +67,7 @@ const lecturers = [
     title: 'Senior Lecturer',
     email: 'shajini@sjp.ac.lk',
     tel: '',
-    img: '/study nest/Assets/img/20230721_002637_edited-271x300.jpg',
+    img: '20230721_002637_edited-271x300.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -63,7 +75,7 @@ const lecturers = [
     title: 'Lecturer',
     email: 'pubudu@sjp.ac.lk',
     tel: '+94 711612267',
-    img: 'Assets/img/profile-gradient-logo-design-template-icon-vector.jpg',
+    img: '3114834-200.png',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -71,7 +83,7 @@ const lecturers = [
     title: 'Lecturer',
     email: 'vindya@sjp.ac.lk',
     tel: '',
-    img: '/study nest/Assets/img/M-M-V-Senanayake-233x300.jpg',
+    img: 'M-M-V-Senanayake-233x300.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -79,7 +91,7 @@ const lecturers = [
     title: 'Lecturer(Probationary)',
     email: 'jayaniprabhashini@sjp.ac.lk',
     tel: '',
-    img: '/study nest/Assets/img/Jayani-Rajakaruna_edited-276x300.jpg',
+    img: 'Jayani-Rajakaruna_edited-276x300.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -87,7 +99,7 @@ const lecturers = [
     title: 'Lecturer',
     email: 'thilinasj@sjp.ac.lk',
     tel: '',
-    img: '/study nest/Assets/img/me-squared-300x300.jpg',
+    img: 'me-squared-300x300.jpg',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   },
   {
@@ -95,7 +107,7 @@ const lecturers = [
     title: 'Instructor – Computer Technology',
     email: 'kdtrangana@sjp.ac.lk',
     tel: '',
-    img: '/study nest/Assets/img/KDTRangana-PP-v02.png',
+    img: 'KDTRangana-PP-v02.png',
     links: [{ label: 'LinkedIn', icon: 'bxl-linkedin-square', href: '#' }, { label: 'Website', icon: 'bxl-wordpress', href: '#' }]
   }
 ];
@@ -113,7 +125,7 @@ const LectureDetails = () => {
             <Grid item xs={12} sm={6} md={4} key={idx}>
               <Card sx={{ backgroundColor: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', height: '100%' }}>
                 {lec.img && (
-                  <CardMedia component="img" height="220" image={lec.img} alt={lec.name} sx={{ objectFit: 'cover' }} />
+                  <CardMedia component="img" height="220" image={resolveImage(lec.img)} alt={lec.name} sx={{ objectFit: 'cover' }} />
                 )}
                 <CardContent>
                   <Typography variant="h6" sx={{ color: 'white', fontWeight: 'bold', mb: 1 }}>
