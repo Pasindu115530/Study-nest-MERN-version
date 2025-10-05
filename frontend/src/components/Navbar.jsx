@@ -86,6 +86,9 @@ const Navbar = () => {
           <Button color="inherit" component={Link} to="/contact">
             CONTACT
           </Button>
+          <Button color="inherit" component={Link} to="/lecture-details">
+            LECTURE DETAILS
+          </Button>
         </Box>
 
         <Box component="form" onSubmit={handleSearch} sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>

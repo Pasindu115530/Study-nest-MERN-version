@@ -45,15 +45,15 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             size="large"
-            color="inherit"
+            color='#ff7200'
             aria-label="github"
           >
             <GitHub />
           </IconButton>
-          <IconButton component="a" href="#" size="large" color="inherit" aria-label="twitter">
+          <IconButton component="a" href="#" size="large" color='#ff7200' aria-label="twitter">
             <Twitter />
           </IconButton>
-          <IconButton component="a" href="#" size="large" color="inherit" aria-label="instagram">
+          <IconButton component="a" href="#" size="large" color='#ff7200' aria-label="instagram">
             <Instagram />
           </IconButton>
         </Box>

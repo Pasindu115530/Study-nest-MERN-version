@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import UploadNotes from './pages/UploadNotes';
 import ViewNotes from './pages/ViewNotes';
+import LectureDetails from './pages/LectureDetails';
 import ProtectedRoute from './components/ProtectedRoute';
 import Profile from './pages/Profile';
 
@@ -81,6 +82,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <ViewNotes />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/lecture-details" 
+                element={
+                  <ProtectedRoute>
+                    <LectureDetails />
                   </ProtectedRoute>
                 } 
               />
