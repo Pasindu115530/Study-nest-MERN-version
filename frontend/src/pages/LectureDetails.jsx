@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, Chip, Link as MuiLink } from '@mui/material';
 
 // Eagerly import all images from assets and expose as URLs
