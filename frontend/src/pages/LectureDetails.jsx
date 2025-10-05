@@ -121,7 +121,7 @@ const LectureDetails = () => {
           Lecture Details
         </Typography>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           {lecturers.map((lec, idx) => (
             <Grid item xs={12} sm={6} md={4} key={idx}>
               <Card sx={{ backgroundColor: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '20px', height: '100%' }}>

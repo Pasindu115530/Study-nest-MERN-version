@@ -101,7 +101,7 @@ The backend server will start on `http://localhost:5000`
 #### Start the Frontend Development Server
 ```bash
 cd frontend
-npm start
+npm run dev
 ```
 The frontend will start on `http://localhost:3000`
 
