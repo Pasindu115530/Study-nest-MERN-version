@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import contactimg from '../assets/logic-page-pic.png'
 import {
   Box,
   Container,
@@ -79,7 +80,7 @@ const Contact = () => {
           <Grid item xs={12} md={6}>
             <Box sx={{ textAlign: 'center' }}>
               <img
-                src="/api/placeholder/500/500"
+                src={contactimg}
                 alt="Contact illustration"
                 style={{
                   width: '100%',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import homepageimage from '../assets/homepage.jpg';
 import {
   Box,
   Container,
@@ -150,7 +151,7 @@ const Home = () => {
                 }}
               >
                 <img
-                  src="/api/placeholder/600/400"
+                  src={homepageimage}
                   alt="Study Nest"
                   style={{
                     width: '100%',
