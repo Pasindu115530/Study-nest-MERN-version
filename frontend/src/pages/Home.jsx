@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import homepageimage from '../assets/homepage.jpg';
+import homepageimage from '../assets/bgRemoved.png';
 import {
   Box,
   Container,
