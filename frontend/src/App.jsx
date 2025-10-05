@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard';
 import UploadNotes from './pages/UploadNotes';
 import ViewNotes from './pages/ViewNotes';
 import ProtectedRoute from './components/ProtectedRoute';
+import Profile from './pages/Profile';
 
 const theme = createTheme({
   palette: {
@@ -58,6 +59,14 @@ function App() {
                     <Dashboard />
                   </ProtectedRoute>
                 } 
+              />
+              <Route 
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <Profile />
+                  </ProtectedRoute>
+                }
               />
               <Route 
                 path="/upload-notes" 

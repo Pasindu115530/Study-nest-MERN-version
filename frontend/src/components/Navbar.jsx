@@ -37,6 +37,11 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const goToProfile = () => {
+    handleMenuClose();
+    navigate('/profile');
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/');
@@ -171,7 +176,7 @@ const Navbar = () => {
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
             >
-              <MenuItem onClick={handleMenuClose}>
+              <MenuItem onClick={goToProfile}>
                 <AccountCircle sx={{ mr: 1 }} />
                 Profile
               </MenuItem>
