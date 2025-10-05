@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AuthProvider } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -40,9 +41,10 @@ function App() {
       <CssBaseline />
       <AuthProvider>
         <Router>
-          <div className="App">
+          <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <Navbar />
-            <Routes>
+            <div style={{ flex: 1 }}>
+              <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
@@ -73,7 +75,9 @@ function App() {
                   </ProtectedRoute>
                 } 
               />
-            </Routes>
+              </Routes>
+            </div>
+            <Footer />
           </div>
         </Router>
       </AuthProvider>
