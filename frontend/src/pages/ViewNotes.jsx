@@ -31,9 +31,9 @@ const ViewNotes = () => {
   const [error, setError] = useState('');
   const [filters, setFilters] = useState({
     search: searchParams.get('search') || '',
-    department: '',
-    year: '',
-    semester: ''
+    department: searchParams.get('department') || '',
+    year: searchParams.get('year') || '',
+    semester: searchParams.get('semester') || ''
   });
 
   useEffect(() => {
