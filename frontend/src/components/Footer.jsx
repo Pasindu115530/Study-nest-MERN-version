@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Link as MuiLink, IconButton } from '@mui/material';
+import { Box, Container, Typography, Link as MuiLink, IconButton, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { GitHub, Twitter, Instagram } from '@mui/icons-material';
 
@@ -16,47 +16,113 @@ const Footer = () => {
         borderTop: '1px solid rgba(255,255,255,0.04)',
       }}
     >
-      <Container maxWidth="lg" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 2, flexWrap: 'wrap' }}>
-        <Box>
-          <Typography variant="h6" sx={{ color: '#ff7200', fontWeight: 'bold' }}>
-            StudyNest
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            © {year} StudyNest. All rights reserved.
-          </Typography>
-        </Box>
+      <Container maxWidth="lg">
+        <Grid container spacing={3} alignItems="center">
+          {/* Brand Section */}
+          <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'center', md: 'left' } }}>
+            <Typography variant="h6" sx={{ color: '#ff7200', fontWeight: 'bold', mb: 1 }}>
+              StudyNest
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              © {year} StudyNest. All rights reserved.
+            </Typography>
+          </Grid>
 
-        <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-          <MuiLink component={RouterLink} to="/about" color="inherit" underline="hover">
-            About
-          </MuiLink>
-          <MuiLink component={RouterLink} to="/services" color="inherit" underline="hover">
-            Services
-          </MuiLink>
-          <MuiLink component={RouterLink} to="/contact" color="inherit" underline="hover">
-            Contact
-          </MuiLink>
-        </Box>
+          {/* Navigation Links */}
+          <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'center', md: 'center' } }}>
+            <Box sx={{ display: 'flex', gap: { xs: 3, md: 2 }, justifyContent: { xs: 'center', md: 'center' }, flexWrap: 'wrap' }}>
+              <MuiLink 
+                component={RouterLink} 
+                to="/about" 
+                color="inherit" 
+                underline="hover"
+                sx={{ 
+                  fontSize: { xs: '0.9rem', md: '1rem' },
+                  '&:hover': { color: '#ff7200' }
+                }}
+              >
+                About
+              </MuiLink>
+              <MuiLink 
+                component={RouterLink} 
+                to="/services" 
+                color="inherit" 
+                underline="hover"
+                sx={{ 
+                  fontSize: { xs: '0.9rem', md: '1rem' },
+                  '&:hover': { color: '#ff7200' }
+                }}
+              >
+                Services
+              </MuiLink>
+              <MuiLink 
+                component={RouterLink} 
+                to="/contact" 
+                color="inherit" 
+                underline="hover"
+                sx={{ 
+                  fontSize: { xs: '0.9rem', md: '1rem' },
+                  '&:hover': { color: '#ff7200' }
+                }}
+              >
+                Contact
+              </MuiLink>
+            </Box>
+          </Grid>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <IconButton
-            component="a"
-            href="https://github.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            size="large"
-            color='#ff7200'
-            aria-label="github"
-          >
-            <GitHub />
-          </IconButton>
-          <IconButton component="a" href="#" size="large" color='#ff7200' aria-label="twitter">
-            <Twitter />
-          </IconButton>
-          <IconButton component="a" href="#" size="large" color='#ff7200' aria-label="instagram">
-            <Instagram />
-          </IconButton>
-        </Box>
+          {/* Social Links */}
+          <Grid item xs={12} md={4} sx={{ textAlign: { xs: 'center', md: 'right' } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-end' }, gap: 1 }}>
+              <IconButton
+                component="a"
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                size="medium"
+                color="inherit"
+                aria-label="github"
+                sx={{ 
+                  '&:hover': { 
+                    backgroundColor: 'rgba(255, 114, 0, 0.1)',
+                    color: '#ff7200'
+                  }
+                }}
+              >
+                <GitHub />
+              </IconButton>
+              <IconButton 
+                component="a" 
+                href="#" 
+                size="medium" 
+                color="inherit" 
+                aria-label="twitter"
+                sx={{ 
+                  '&:hover': { 
+                    backgroundColor: 'rgba(255, 114, 0, 0.1)',
+                    color: '#ff7200'
+                  }
+                }}
+              >
+                <Twitter />
+              </IconButton>
+              <IconButton 
+                component="a" 
+                href="#" 
+                size="medium" 
+                color="inherit" 
+                aria-label="instagram"
+                sx={{ 
+                  '&:hover': { 
+                    backgroundColor: 'rgba(255, 114, 0, 0.1)',
+                    color: '#ff7200'
+                  }
+                }}
+              >
+                <Instagram />
+              </IconButton>
+            </Box>
+          </Grid>
+        </Grid>
       </Container>
     </Box>
   );

@@ -61,18 +61,19 @@ const Home = () => {
           }}
         />
 
-        <Container maxWidth="lg">
-          <Grid container spacing={4} alignItems="center">
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
+          <Grid container spacing={{ xs: 3, md: 4 }} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography
                 variant="h1"
                 component="h1"
                 sx={{
-                  fontSize: { xs: '2.5rem', md: '4rem' },
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem' },
                   fontWeight: 'bold',
                   color: 'white',
                   mb: 2,
-                  lineHeight: 1.2
+                  lineHeight: 1.2,
+                  textAlign: { xs: 'center', md: 'left' }
                 }}
               >
                 Welcome to <br />
@@ -86,7 +87,9 @@ const Home = () => {
                 sx={{
                   color: '#f3a05d',
                   mb: 3,
-                  fontWeight: 300
+                  fontWeight: 300,
+                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2.125rem' },
+                  textAlign: { xs: 'center', md: 'left' }
                 }}
               >
                 Find | Learn | Grow
@@ -98,7 +101,10 @@ const Home = () => {
                   color: 'rgba(255, 255, 255, 0.8)',
                   mb: 4,
                   lineHeight: 1.6,
-                  maxWidth: '500px'
+                  maxWidth: '500px',
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
+                  textAlign: { xs: 'center', md: 'left' },
+                  mx: { xs: 'auto', md: 0 }
                 }}
               >
                 At StudyNest, we believe every learner deserves a sanctuary of knowledge. 
@@ -106,7 +112,12 @@ const Home = () => {
                 and expert resources.
               </Typography>
 
-              <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
+              <Box sx={{ 
+                display: 'flex', 
+                gap: 2, 
+                flexWrap: 'wrap',
+                justifyContent: { xs: 'center', md: 'flex-start' }
+              }}>
                 <Button
                   variant="contained"
                   size="large"
@@ -115,8 +126,10 @@ const Home = () => {
                   sx={{
                     backgroundColor: '#ff7200',
                     '&:hover': { backgroundColor: '#e65a00' },
-                    px: 4,
-                    py: 1.5
+                    px: { xs: 3, md: 4 },
+                    py: 1.5,
+                    fontSize: { xs: '0.9rem', md: '1rem' },
+                    minWidth: { xs: '120px', md: 'auto' }
                   }}
                 >
                   LOG IN
@@ -133,8 +146,10 @@ const Home = () => {
                       borderColor: '#e65a00',
                       backgroundColor: 'rgba(255, 114, 0, 0.1)'
                     },
-                    px: 4,
-                    py: 1.5
+                    px: { xs: 3, md: 4 },
+                    py: 1.5,
+                    fontSize: { xs: '0.9rem', md: '1rem' },
+                    minWidth: { xs: '120px', md: 'auto' }
                   }}
                 >
                   SIGN UP
@@ -147,7 +162,8 @@ const Home = () => {
                 sx={{
                   display: 'flex',
                   justifyContent: 'center',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  mt: { xs: 2, md: 0 }
                 }}
               >
                 <img
@@ -167,23 +183,24 @@ const Home = () => {
       </Box>
 
       {/* Features Section */}
-      <Box sx={{ py: 8, backgroundColor: '#0b0b0b' }}>
-        <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#0b0b0b' }}>
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
           <Typography
             variant="h3"
             component="h2"
             textAlign="center"
             sx={{
               color: 'white',
-              mb: 6,
-              fontWeight: 'bold'
+              mb: { xs: 4, md: 6 },
+              fontWeight: 'bold',
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }
             }}
           >
             Why Choose StudyNest?
           </Typography>
 
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={3}>
+          <Grid container spacing={{ xs: 3, md: 4 }}>
+            <Grid item xs={12} sm={6} md={3}>
               <Card
                 sx={{
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -196,19 +213,33 @@ const Home = () => {
                   }
                 }}
               >
-                <CardContent sx={{ textAlign: 'center', p: 3 }}>
-                  <School sx={{ fontSize: 60, color: '#ff7200', mb: 2 }} />
-                  <Typography variant="h5" sx={{ color: 'white', mb: 2, fontWeight: 'bold' }}>
+                <CardContent sx={{ textAlign: 'center', p: { xs: 2, md: 3 } }}>
+                  <School sx={{ fontSize: { xs: 50, md: 60 }, color: '#ff7200', mb: 2 }} />
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      color: 'white', 
+                      mb: 2, 
+                      fontWeight: 'bold',
+                      fontSize: { xs: '1.25rem', md: '1.5rem' }
+                    }}
+                  >
                     Centralized Resources
                   </Typography>
-                  <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                  <Typography 
+                    variant="body1" 
+                    sx={{ 
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      fontSize: { xs: '0.9rem', md: '1rem' }
+                    }}
+                  >
                     All your study materials in one place, organized by department and semester.
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Card
                 sx={{
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -221,19 +252,33 @@ const Home = () => {
                   }
                 }}
               >
-                <CardContent sx={{ textAlign: 'center', p: 3 }}>
-                  <Book sx={{ fontSize: 60, color: '#ff7200', mb: 2 }} />
-                  <Typography variant="h5" sx={{ color: 'white', mb: 2, fontWeight: 'bold' }}>
+                <CardContent sx={{ textAlign: 'center', p: { xs: 2, md: 3 } }}>
+                  <Book sx={{ fontSize: { xs: 50, md: 60 }, color: '#ff7200', mb: 2 }} />
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      color: 'white', 
+                      mb: 2, 
+                      fontWeight: 'bold',
+                      fontSize: { xs: '1.25rem', md: '1.5rem' }
+                    }}
+                  >
                     Easy Access
                   </Typography>
-                  <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                  <Typography 
+                    variant="body1" 
+                    sx={{ 
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      fontSize: { xs: '0.9rem', md: '1rem' }
+                    }}
+                  >
                     Quick search and download of lecture notes, past papers, and presentations.
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Card
                 sx={{
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -246,19 +291,33 @@ const Home = () => {
                   }
                 }}
               >
-                <CardContent sx={{ textAlign: 'center', p: 3 }}>
-                  <Group sx={{ fontSize: 60, color: '#ff7200', mb: 2 }} />
-                  <Typography variant="h5" sx={{ color: 'white', mb: 2, fontWeight: 'bold' }}>
+                <CardContent sx={{ textAlign: 'center', p: { xs: 2, md: 3 } }}>
+                  <Group sx={{ fontSize: { xs: 50, md: 60 }, color: '#ff7200', mb: 2 }} />
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      color: 'white', 
+                      mb: 2, 
+                      fontWeight: 'bold',
+                      fontSize: { xs: '1.25rem', md: '1.5rem' }
+                    }}
+                  >
                     Community Driven
                   </Typography>
-                  <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                  <Typography 
+                    variant="body1" 
+                    sx={{ 
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      fontSize: { xs: '0.9rem', md: '1rem' }
+                    }}
+                  >
                     Share and discover resources with fellow students and educators.
                   </Typography>
                 </CardContent>
               </Card>
             </Grid>
 
-            <Grid item xs={12} md={3}>
+            <Grid item xs={12} sm={6} md={3}>
               <Card
                 sx={{
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -271,12 +330,26 @@ const Home = () => {
                   }
                 }}
               >
-                <CardContent sx={{ textAlign: 'center', p: 3 }}>
-                  <Security sx={{ fontSize: 60, color: '#ff7200', mb: 2 }} />
-                  <Typography variant="h5" sx={{ color: 'white', mb: 2, fontWeight: 'bold' }}>
+                <CardContent sx={{ textAlign: 'center', p: { xs: 2, md: 3 } }}>
+                  <Security sx={{ fontSize: { xs: 50, md: 60 }, color: '#ff7200', mb: 2 }} />
+                  <Typography 
+                    variant="h5" 
+                    sx={{ 
+                      color: 'white', 
+                      mb: 2, 
+                      fontWeight: 'bold',
+                      fontSize: { xs: '1.25rem', md: '1.5rem' }
+                    }}
+                  >
                     Secure Platform
                   </Typography>
-                  <Typography variant="body1" sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
+                  <Typography 
+                    variant="body1" 
+                    sx={{ 
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      fontSize: { xs: '0.9rem', md: '1rem' }
+                    }}
+                  >
                     Your data is safe with our secure authentication and file management.
                   </Typography>
                 </CardContent>
