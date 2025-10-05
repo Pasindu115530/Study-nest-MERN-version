@@ -51,6 +51,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/lecture-details" element={<LectureDetails />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route 
@@ -85,14 +86,14 @@ function App() {
                   </ProtectedRoute>
                 } 
               />
-              <Route 
+              {/* <Route 
                 path="/lecture-details" 
                 element={
                   <ProtectedRoute>
                     <LectureDetails />
                   </ProtectedRoute>
                 } 
-              />
+              /> */}
               </Routes>
             </div>
             <Footer />
