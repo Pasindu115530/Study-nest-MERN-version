@@ -249,7 +249,7 @@ const Contact = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                       <Phone sx={{ color: '#ff7200', mr: 1 }} />
                       <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                        +1 (555) 123-4567
+                        +94 (77) 5346 811
                       </Typography>
                     </Box>
                   </Grid>
@@ -257,7 +257,7 @@ const Contact = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                       <LocationOn sx={{ color: '#ff7200', mr: 1 }} />
                       <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.8)' }}>
-                        University Campus
+                        USJ, Sri Lanka
                       </Typography>
                     </Box>
                   </Grid>
