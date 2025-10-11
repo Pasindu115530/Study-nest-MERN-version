@@ -118,7 +118,7 @@ const LectureDetails = () => {
     <Box sx={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0b0b0b 0%, #1a1a1a 100%)', py: 4 }}>
       <Container maxWidth="lg">
         <Typography variant="h3" component="h1" sx={{ color: 'white', mb: 4, fontWeight: 'bold' }}>
-          Lecture Details
+          Lecturers' Details
         </Typography>
 
         <Grid container spacing={4}>
