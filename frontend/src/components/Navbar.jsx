@@ -129,7 +129,7 @@ const Navbar = () => {
               CONTACT
             </Button>
             <Button color="inherit" component={Link} to="/lecture-details">
-              LECTURE DETAILS
+              LECTURERS' DETAILS
             </Button>
           </Box>
 
@@ -374,7 +374,7 @@ const Navbar = () => {
                 <ListItemIcon>
                   <School sx={{ color: '#ff7200' }} />
                 </ListItemIcon>
-                <ListItemText primary="Lecture Details" sx={{ color: 'white' }} />
+                <ListItemText primary="Lecturers' Details" sx={{ color: 'white' }} />
               </ListItemButton>
             </ListItem>
             
