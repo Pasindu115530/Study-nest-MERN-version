@@ -75,7 +75,7 @@ const Footer = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-end' }, gap: 1 }}>
               <IconButton
                 component="a"
-                href="https://github.com/"
+                href="https://github.com/Pasindu115530/Study-Nest"
                 target="_blank"
                 rel="noopener noreferrer"
                 size="medium"
